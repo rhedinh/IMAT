@@ -2,61 +2,92 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
 
-
-<AnchorPane prefHeight="735.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
+<AnchorPane prefHeight="735.0" prefWidth="1188.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
-      <ImageView fitHeight="89.0" fitWidth="98.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../Downloads/bc4aff251fec4dd5b321f2603f907db6.png" />
-         </image>
-      </ImageView>
-      <SplitPane dividerPositions="0.162217659137577" layoutY="93.0" prefHeight="640.0" prefWidth="976.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+      <StackPane prefHeight="745.0" prefWidth="1188.0">
+         <children>
+            <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
-                  <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Button" />
-                  <Button layoutX="37.0" layoutY="99.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Button" />
-                  <Button layoutX="37.0" layoutY="187.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Button" />
-                  <Button layoutX="37.0" layoutY="273.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Button" />
-                  <Button layoutX="37.0" layoutY="362.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Button" />
-                  <Button layoutX="37.0" layoutY="454.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Button" />
-                  <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Button" />
+                  <AnchorPane layoutX="317.0" layoutY="123.0" prefHeight="349.0" prefWidth="628.0">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="197.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextArea layoutX="257.0" layoutY="23.0" prefHeight="200.0" prefWidth="289.0" />
+                        <Label layoutX="14.0" layoutY="254.0" prefHeight="43.0" prefWidth="88.0" text="Label" />
+                        <Label layoutX="113.0" layoutY="254.0" prefHeight="43.0" prefWidth="76.0" text="Label" />
+                        <Button layoutX="434.0" layoutY="280.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Button" />
+                        <Label layoutX="311.0" layoutY="283.0" prefHeight="27.0" prefWidth="51.0" text="Label" />
+                        <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="294.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/plus.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="363.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/minus.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="563.0" layoutY="14.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <AnchorPane fx:id="mainScen" prefHeight="735.0" prefWidth="1188.0">
                <children>
-                  <GridPane layoutX="-3.0" layoutY="1.0" prefHeight="627.0" prefWidth="813.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                  </GridPane>
+                  <ToolBar layoutX="138.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="97.0" prefWidth="1046.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="41.0" prefWidth="143.0" text="Button" />
+                        <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="41.0" prefWidth="181.0" text="Button" />
+                        <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="42.0" prefWidth="173.0" text="Button" />
+                        <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="43.0" prefWidth="167.0" text="Button" />
+                    </items>
+                  </ToolBar>
+                  <Label fx:id="home_label" layoutX="138.0" layoutY="14.0" prefHeight="73.0" prefWidth="98.0" text="home" />
+                  <ImageView fitHeight="88.0" fitWidth="89.0" focusTraversable="true" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pic/bc4aff251fec4dd5b321f2603f907db6.png" />
+                     </image>
+                  </ImageView>
+                  <SplitPane dividerPositions="0.15605749486652978" layoutX="-6.0" layoutY="95.0" prefHeight="649.0" prefWidth="1196.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Mejeri" />
+                              <Button layoutX="37.0" layoutY="99.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Chark" />
+                              <Button layoutX="37.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#vegeFilter" prefHeight="73.0" prefWidth="89.0" text="Grönsaker" />
+                              <Button layoutX="37.0" layoutY="273.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Bröd" />
+                              <Button layoutX="37.0" layoutY="362.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Kryddor" />
+                              <Button layoutX="37.0" layoutY="454.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="godis" />
+                              <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Hygien" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ScrollPane fitToWidth="true" prefHeight="640.0" prefWidth="997.0" AnchorPane.bottomAnchor="-7.333333333333371" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <FlowPane fx:id="flowPane" prefHeight="640.0" prefWidth="995.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
                </children>
             </AnchorPane>
-        </items>
-      </SplitPane>
-      <ToolBar layoutX="280.0" layoutY="-1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="96.0" prefWidth="696.0">
-        <items>
-          <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="41.0" prefWidth="143.0" text="Button" />
-            <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="41.0" prefWidth="181.0" text="Button" />
-            <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="42.0" prefWidth="173.0" text="Button" />
-            <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="43.0" prefWidth="167.0" text="Button" />
-        </items>
-      </ToolBar>
-      <Label layoutX="168.0" layoutY="14.0" prefHeight="73.0" prefWidth="98.0" text="home" />
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>
