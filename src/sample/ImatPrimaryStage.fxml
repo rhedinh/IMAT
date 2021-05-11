@@ -65,13 +65,13 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <Button layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Mejeri" />
-                              <Button layoutX="37.0" layoutY="99.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Chark" />
-                              <Button layoutX="37.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#vegeFilter" prefHeight="73.0" prefWidth="89.0" text="Grönsaker" />
-                              <Button layoutX="37.0" layoutY="273.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Bröd" />
-                              <Button layoutX="37.0" layoutY="362.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Kryddor" />
-                              <Button layoutX="37.0" layoutY="454.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="godis" />
-                              <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="89.0" text="Hygien" />
+                              <Button fx:id="mejeri" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#milkProductFilter" prefHeight="73.0" prefWidth="89.0" text="Mejeri" />
+                              <Button fx:id="chark" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#meatFilter" prefHeight="73.0" prefWidth="89.0" text="Chark" />
+                              <Button fx:id="grönsaker" layoutX="37.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#vegeFilter" prefHeight="73.0" prefWidth="89.0" text="Grönsaker    &amp; Frukt" wrapText="true" />
+                              <Button fx:id="bröd" layoutX="37.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#breadFilter" prefHeight="73.0" prefWidth="89.0" text="Bröd" />
+                              <Button fx:id="kryddor" layoutX="37.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#kryddorFilter" prefHeight="73.0" prefWidth="89.0" text="Kryddor" />
+                              <Button fx:id="godis" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#sweetFilter" prefHeight="73.0" prefWidth="89.0" text="godis" />
+                              <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#dryckFilter" prefHeight="73.0" prefWidth="89.0" text="Dryck" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">

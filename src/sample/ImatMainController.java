@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ProductCategory;
 
 
 import java.net.URL;
@@ -54,7 +55,8 @@ public class ImatMainController implements Initializable {
 
     @FXML
     Label home_label;
-    @FXML FlowPane flowPane;
+    @FXML
+    FlowPane flowPane;
     @FXML
     AnchorPane infoScen;
     @FXML
@@ -64,40 +66,98 @@ public class ImatMainController implements Initializable {
     @FXML
     ImageView exit;
     ItemsCardsController I = new ItemsCardsController
-           (iMatDataHandler, this, 17);
+            (iMatDataHandler, this, 17);
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-     for (Product p: iMatDataHandler.getProducts()){
-        flowPane.getChildren().add( new ItemsCardsController(iMatDataHandler, this, p.getProductId()) );
-        // System.out.println(p.getCategory());
-     }
-
-
+        for (Product p : iMatDataHandler.getProducts()) {
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+            // System.out.println(p.getCategory());
+        }
 
 
     }
 
-    public void getInfoScen(){
+    public void getInfoScen() {
         infoScen.toFront();
 
     }
-    public void getMainScen(Event event){
+
+    public void getMainScen(Event event) {
         mainScen.toFront();
 
     }
-@FXML
-    public void vegeFilter(){
-        flowPane.getChildren().clear();
-        for (Product p: iMatDataHandler.getProducts()){
-            if(p.getCategory().name()=="FRUIT" || p.getCategory().name()=="VEGETABLE_FRUIT"
-                    || p.getCategory().name()=="EXOTIC_FRUIT" || p.getCategory().name()=="VEGETABLE_FRUIT"){
-                flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler,this, p.getProductId()));
-            }
-        }
 
+
+    @FXML
+    public void vegeFilter() {
+        flowPane.getChildren().clear();
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.POD))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+    for (Product p : iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.BERRY))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.CITRUS_FRUIT))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.FRUIT))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.MELONS))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT))
+           flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.ROOT_VEGETABLE))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+    }
+
+
+    @FXML
+    public void breadFilter() {
+        flowPane.getChildren().clear();
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.BREAD))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+
+
+    }
+
+
+    @FXML
+    public void meatFilter() {
+        flowPane.getChildren().clear();
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.MEAT))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+
+
+    }
+
+    public void sweetFilter() {
+        flowPane.getChildren().clear();
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.SWEET))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+
+    }
+
+    public void milkProductFilter() {
+        flowPane.getChildren().clear();
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.DAIRIES))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+    }
+
+    public void kryddorFilter() {
+        flowPane.getChildren().clear();
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.HERB))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+    }
+
+    public void dryckFilter() {
+        flowPane.getChildren().clear();
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
     }
 
 
 }
+
