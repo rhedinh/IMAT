@@ -15,7 +15,7 @@ public class Main extends Application
 
         Parent root = FXMLLoader.load(getClass().getResource("ImatPrimaryStage.fxml"));
         primaryStage.setTitle("IMAT");
-        primaryStage.setScene(new Scene(root, 1000, 1000));
+        primaryStage.setScene(new Scene(root, 1188, 735));
         primaryStage.show();
     }
 

@@ -29,7 +29,7 @@ public class ItemsCardsController extends AnchorPane {
     @FXML
     Label antal;
     @FXML
-    Button info;
+    Button merInfo;
     @FXML
     ImageView plus;
     @FXML
@@ -41,7 +41,8 @@ public class ItemsCardsController extends AnchorPane {
 
 
     private ImatMainController parentController;
-
+    private IMatDataHandler iMatDataHandler;
+    private int id;
 
 
 
@@ -51,6 +52,8 @@ public class ItemsCardsController extends AnchorPane {
        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("item_card.fxml"));
        fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
+        this.iMatDataHandler = iMatDataHandler;
+        this.id=id;
 
 
         try {
@@ -77,6 +80,8 @@ public class ItemsCardsController extends AnchorPane {
     @FXML
     private void infoHandler(Event event){
         parentController.getInfoScen();
+        parentController.cardImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
+
     }
 
 }
