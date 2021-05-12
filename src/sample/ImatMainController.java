@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -52,6 +53,9 @@ public class ImatMainController implements Initializable {
     ImageView plus;
     @FXML
     ImageView minus;
+    @FXML
+    ProgressBar progres;
+
 
 
 
@@ -76,6 +80,7 @@ public class ImatMainController implements Initializable {
         for (Product p : iMatDataHandler.getProducts()) {
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
             // System.out.println(p.getCategory());
+
         }
 
 

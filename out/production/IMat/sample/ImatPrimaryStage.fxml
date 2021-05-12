@@ -1,23 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.AmbientLight?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="735.0" prefWidth="1188.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
       <StackPane prefHeight="745.0" prefWidth="1188.0">
          <children>
+            <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <AnchorPane layoutX="317.0" layoutY="123.0" prefHeight="349.0" prefWidth="628.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <ImageView fx:id="cardImage" fitHeight="200.0" fitWidth="197.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="14.0" layoutY="254.0" prefHeight="43.0" prefWidth="88.0" text="Label" />
+                        <Label layoutX="113.0" layoutY="254.0" prefHeight="43.0" prefWidth="76.0" text="Label" />
+                        <Button layoutX="434.0" layoutY="280.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Button" />
+                        <Label layoutX="311.0" layoutY="283.0" prefHeight="27.0" prefWidth="51.0" text="Label" />
+                        <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="294.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/plus.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="363.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/minus.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="563.0" layoutY="14.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="662.0" prefWidth="1131.0">
+               <children>
+                  <AnchorPane layoutY="103.0" prefHeight="647.0" prefWidth="1190.0" style="-fx-background-color: #000000;">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <children>
+                        <ScrollPane layoutX="3.0" prefHeight="647.0" prefWidth="1187.0">
+                           <content>
+                              <AnchorPane prefHeight="1376.0" prefWidth="1195.0" style="-fx-background-color: #FFFFFF;">
+                                 <children>
+                                    <Circle fill="WHITE" layoutX="111.0" layoutY="510.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9aefa2" height="421.0" layoutX="97.0" layoutY="49.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9aefa2" height="452.0" layoutX="104.0" layoutY="540.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+                                    <Circle fill="WHITE" layoutX="110.0" layoutY="1024.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <ScrollPane layoutX="151.0" layoutY="60.0" prefHeight="454.0" prefWidth="1029.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="451.0" prefWidth="1041.0" />
+                                      </content>
+                                    </ScrollPane>
+                                    <Label layoutX="4.0" layoutY="38.0" prefHeight="35.0" prefWidth="123.0" text="varukorgen">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="16.0" layoutY="475.0" prefHeight="100.0" prefWidth="112.0" text="Mina Uppgifter" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="810.0" endY="6.103515625E-5" layoutX="360.0" layoutY="546.0" startX="-202.0" startY="6.103515625E-5" />
+                                    <Label layoutX="905.0" layoutY="515.0" text="Tot. pris">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="186.0" layoutY="661.0" prefHeight="50.0" prefWidth="977.0" text="Label">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="191.0" layoutY="600.0" prefHeight="50.0" prefWidth="996.0" text="Label">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="181.0" layoutY="721.0" prefHeight="50.0" prefWidth="977.0" text="Label">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="187.0" layoutY="801.0" prefHeight="50.0" prefWidth="977.0" text="Label">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="206.0" layoutY="873.0" prefHeight="50.0" prefWidth="431.0" text="Label">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="825.0" layoutY="872.0" prefHeight="50.0" prefWidth="223.0" text="Label">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="207.0" layoutY="966.0" prefHeight="50.0" prefWidth="431.0" text="Label">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="648.0" layoutY="960.0" prefHeight="50.0" prefWidth="431.0" text="Label">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9aefa2" height="211.0" layoutX="112.0" layoutY="1071.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+                                    <Circle fill="WHITE" layoutX="116.0" layoutY="1332.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Label layoutX="24.0" layoutY="1001.0" prefHeight="79.0" prefWidth="72.0" text="Leverans- tid" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="19.0" layoutY="1280.0" prefHeight="100.0" prefWidth="87.0" text="Betalnings- sätt" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Bloom />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.4035087823867798" green="0.2901776134967804" blue="0.2901776134967804" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+            </AnchorPane>
             <AnchorPane fx:id="mainScen" prefHeight="735.0" prefWidth="1188.0">
                <children>
                   <SplitPane dividerPositions="0.15605749486652978" layoutX="-6.0" layoutY="95.0" prefHeight="649.0" prefWidth="1196.0">
@@ -48,6 +193,11 @@
                                     </FlowPane>
                                  </content>
                               </ScrollPane>
+                              <Label fx:id="page_label" prefHeight="43.0" prefWidth="271.0" text="Label">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                     </items>
@@ -67,39 +217,7 @@
                               <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="43.0" prefWidth="167.0" text="Historik" />
                           </items>
                         </ToolBar>
-                        <Label fx:id="page_label" layoutX="141.0" layoutY="27.0" prefHeight="57.0" prefWidth="271.0" text="Label">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-               <children>
-                  <AnchorPane layoutX="317.0" layoutY="123.0" prefHeight="349.0" prefWidth="628.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <ImageView fx:id="cardImage" fitHeight="200.0" fitWidth="253.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label layoutX="14.0" layoutY="254.0" prefHeight="43.0" prefWidth="88.0" text="Label" />
-                        <Label layoutX="113.0" layoutY="254.0" prefHeight="43.0" prefWidth="76.0" text="Label" />
-                        <Button layoutX="434.0" layoutY="280.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Button" />
-                        <Label layoutX="311.0" layoutY="283.0" prefHeight="27.0" prefWidth="51.0" text="Label" />
-                        <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="294.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/plus.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="363.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/minus.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="563.0" layoutY="14.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/Close-512.png" />
-                           </image>
-                        </ImageView>
+                        <Button layoutX="152.0" layoutY="34.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="89.0" text="Home" />
                      </children>
                   </AnchorPane>
                </children>
