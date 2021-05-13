@@ -4,10 +4,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -55,6 +52,9 @@ public class ImatMainController implements Initializable {
     ImageView minus;
     @FXML
     ProgressBar progres;
+
+    @FXML
+    TextField searchFilter;
 
 
 
@@ -179,6 +179,17 @@ public class ImatMainController implements Initializable {
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
         page_label.setText("Dryck");
+    }
+
+
+
+    public void setSearchFilter(){
+        flowPane.getChildren().clear();
+        for (Product p : iMatDataHandler.findProducts(searchFilter.getText()))
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+
+
+
     }
 
 
