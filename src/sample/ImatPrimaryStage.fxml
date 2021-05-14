@@ -216,7 +216,7 @@
                             <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="41.0" prefWidth="143.0" text="Konto" />
                               <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="41.0" prefWidth="181.0" text="Varukorgen" />
                               <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="42.0" prefWidth="173.0" text="Favorit" />
-                              <Button alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="43.0" prefWidth="167.0" text="Historik" />
+                              <Button fx:id="historik" alignment="TOP_RIGHT" mnemonicParsing="false" onMouseClicked="#setHistorikCards" prefHeight="43.0" prefWidth="167.0" text="Historik" />
                           </items>
                         </ToolBar>
                         <Button layoutX="152.0" layoutY="34.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="89.0" text="Home" />

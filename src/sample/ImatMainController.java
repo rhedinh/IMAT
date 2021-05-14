@@ -9,9 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ProductCategory;
+import se.chalmers.cse.dat216.project.*;
 
 
 import java.net.URL;
@@ -22,7 +20,7 @@ public class ImatMainController implements Initializable {
     //database
     IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
-    private List<ItemsCardsController> products = new ArrayList<>();
+    private List<Order> orderList= iMatDataHandler.getOrders();
     @FXML
     ImageView logo;
     @FXML
@@ -55,6 +53,8 @@ public class ImatMainController implements Initializable {
 
     @FXML
     TextField searchFilter;
+    @FXML
+    Button historik;
 
 
 
@@ -188,8 +188,17 @@ public class ImatMainController implements Initializable {
         for (Product p : iMatDataHandler.findProducts(searchFilter.getText()))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
 
+    }
 
+    @FXML
+    public void setHistorikCards(){
+        flowPane.getChildren().clear();
+        page_label.setText("Historik");
+        for(Order o : orderList) {
+                flowPane.getChildren().add(new historikCardsController(
+                        iMatDataHandler, this, o));
 
+        }
     }
 
 
