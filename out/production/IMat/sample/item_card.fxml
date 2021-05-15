@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -43,8 +44,15 @@
          </effect>
          <font>
             <Font name="Arial Bold" size="14.0" />
-         </font></Button>
-      <ImageView fx:id="favorit" fitHeight="30.0" fitWidth="31.0" layoutX="281.0" layoutY="14.0" onMouseClicked="#setFavoritItem" pickOnBounds="true" preserveRatio="true" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fx:id="favorit" fitHeight="30.0" fitWidth="31.0" layoutX="281.0" layoutY="14.0" onMouseClicked="#setFavoritItem" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
       <Label fx:id="favoritLabel" layoutX="207.0" layoutY="14.0" prefHeight="30.0" prefWidth="80.0">
          <font>
             <Font name="Arial Bold" size="16.0" />
@@ -69,6 +77,9 @@
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
    <effect>
