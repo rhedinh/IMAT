@@ -2,17 +2,80 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
 <fx:root prefHeight="264.0" prefWidth="319.0" styleClass="background" stylesheets="@button.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImage" fitHeight="130.0" fitWidth="257.0" layoutX="16.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="productName" layoutX="19.0" layoutY="159.0" prefHeight="30.0" prefWidth="134.0" text="Label" />
-      <Label fx:id="productPrice" layoutX="19.0" layoutY="207.0" prefHeight="30.0" prefWidth="134.0" text="Label" />
-      <Label fx:id="antal" layoutX="194.0" layoutY="211.0" prefHeight="19.0" prefWidth="63.0" text="Label" />
-      <Button fx:id="info" layoutX="196.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#infoHandler" prefHeight="30.0" prefWidth="63.0" text="Mer info" />
+      <Label fx:id="productName" layoutX="19.0" layoutY="159.0" prefHeight="30.0" prefWidth="134.0" text="Label">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
+               </color>
+            </InnerShadow>
+         </effect></Label>
+      <Label fx:id="productPrice" layoutX="19.0" layoutY="207.0" prefHeight="30.0" prefWidth="134.0" text="Label">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
+               </color>
+            </InnerShadow>
+         </effect></Label>
+      <Button fx:id="merInfo" layoutX="189.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#infoHandler" prefHeight="30.0" prefWidth="73.0" text="Mer info">
+         <effect>
+            <InnerShadow height="119.84" radius="59.42" width="119.84">
+               <color>
+                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Button>
       <ImageView fx:id="favorit" fitHeight="30.0" fitWidth="31.0" layoutX="281.0" layoutY="14.0" onMouseClicked="#setFavoritItem" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="favoritLabel" layoutX="207.0" layoutY="14.0" prefHeight="30.0" prefWidth="80.0" />
+      <Label fx:id="favoritLabel" layoutX="207.0" layoutY="14.0" prefHeight="30.0" prefWidth="80.0">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Label>
+      <ImageView fx:id="ecoImage" fitHeight="49.0" fitWidth="63.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="189.0" layoutY="207.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="73.0" text="Lägg till">
+         <effect>
+            <InnerShadow height="119.84" radius="59.42" width="119.84">
+               <color>
+                  <Color red="0.21123474836349487" green="0.19885748624801636" blue="0.5701754093170166" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
+   <effect>
+      <InnerShadow choke="0.06" height="115.89" radius="45.582499999999996" width="68.44">
+         <color>
+            <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
+         </color>
+      </InnerShadow>
+   </effect>
 </fx:root>

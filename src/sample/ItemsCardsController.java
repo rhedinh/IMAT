@@ -29,9 +29,15 @@ public class ItemsCardsController extends AnchorPane {
     ImageView productImage;
     @FXML
     Label favoritLabel;
+    @FXML
+    ImageView ecoImage;
+    @FXML
+    Button merInfo;
 
     @FXML
     public ImageView favorit;
+    @FXML
+    public Label ecoLabel;
 
 
 
@@ -67,9 +73,17 @@ public class ItemsCardsController extends AnchorPane {
             favoritLabel.setText("Ej favorit");
         }
 
+
+        if(iMatDataHandler.getProduct(id).isEcological()){
+            ecoImage.setImage(new Image("pic/eco.png"));
+
+        }
+
+
         parentController = imatMainController;
         productName.setText(iMatDataHandler.getProduct(id).getName());
-        productPrice.setText(iMatDataHandler.getProduct(id).getPrice() + "");
+        productPrice.setText(iMatDataHandler.getProduct(id).getPrice() + " " +
+                iMatDataHandler.getProduct(id).getUnit());
 
         productImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
 
@@ -83,7 +97,8 @@ public class ItemsCardsController extends AnchorPane {
 
 
     @FXML
-    private void infoHandler(Event event) {
+    public void infoHandler(Event event) {
+        System.out.println("hello");
         parentController.getInfoScen();
         parentController.cardImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
         parentController.detInfoPris.setText(productPrice.getText()+iMatDataHandler.getProduct(id).getUnit());
