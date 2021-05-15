@@ -5,13 +5,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<fx:root prefHeight="264.0" prefWidth="326.0" style="-fx-background-color: #ffffff;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="264.0" prefWidth="319.0" styleClass="background" stylesheets="@button.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="productImage" fitHeight="130.0" fitWidth="274.0" layoutX="31.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="productImage" fitHeight="130.0" fitWidth="257.0" layoutX="16.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="productName" layoutX="19.0" layoutY="159.0" prefHeight="30.0" prefWidth="134.0" text="Label" />
       <Label fx:id="productPrice" layoutX="19.0" layoutY="207.0" prefHeight="30.0" prefWidth="134.0" text="Label" />
       <Label fx:id="antal" layoutX="194.0" layoutY="211.0" prefHeight="19.0" prefWidth="63.0" text="Label" />
       <Button fx:id="info" layoutX="196.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#infoHandler" prefHeight="30.0" prefWidth="63.0" text="Mer info" />
+      <ImageView fx:id="favorit" fitHeight="30.0" fitWidth="31.0" layoutX="281.0" layoutY="14.0" onMouseClicked="#setFavoritItem" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="favoritLabel" layoutX="207.0" layoutY="14.0" prefHeight="30.0" prefWidth="80.0" />
    </children>
 </fx:root>

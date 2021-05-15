@@ -20,7 +20,7 @@ public class ImatMainController implements Initializable {
     //database
     IMatDataHandler iMatDataHandler = IMatDataHandler.getInstance();
 
-    private List<Order> orderList= iMatDataHandler.getOrders();
+    private List<Order> orderList = iMatDataHandler.getOrders();
     @FXML
     ImageView logo;
     @FXML
@@ -45,18 +45,20 @@ public class ImatMainController implements Initializable {
     @FXML
     TextArea description;
     @FXML
+    Label antalLabel;
+    @FXML
     ImageView plus;
     @FXML
     ImageView minus;
     @FXML
     ProgressBar progres;
+    @FXML
+    Label detInfoPris;
 
     @FXML
     TextField searchFilter;
     @FXML
     Button historik;
-
-
 
 
     @FXML
@@ -71,17 +73,19 @@ public class ImatMainController implements Initializable {
 
     @FXML
     ImageView exit;
-    ItemsCardsController I = new ItemsCardsController
-            (iMatDataHandler, this, 17);
 
+
+    int antalInt = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         for (Product p : iMatDataHandler.getProducts()) {
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
-            // System.out.println(p.getCategory());
-
         }
+       // flowPane.setPrefWrapLength(2);
+       flowPane.setHgap(7);
+        flowPane.setVgap(7);
+        antalLabel.setText(antalInt+"");
 
 
     }
@@ -97,21 +101,12 @@ public class ImatMainController implements Initializable {
     }
 
 
-
-
-
-
-
-
-
-
-
     @FXML
     public void vegeFilter() {
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.POD))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
-         for (Product p : iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT))
+        for (Product p : iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.BERRY))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
@@ -122,7 +117,7 @@ public class ImatMainController implements Initializable {
         for (Product p : iMatDataHandler.getProducts(ProductCategory.MELONS))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT))
-           flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
         for (Product p : iMatDataHandler.getProducts(ProductCategory.ROOT_VEGETABLE))
             flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
         page_label.setText("Grönsaker & Frukt");
@@ -150,6 +145,7 @@ public class ImatMainController implements Initializable {
 
     }
 
+    @FXML
     public void sweetFilter() {
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.SWEET))
@@ -158,6 +154,7 @@ public class ImatMainController implements Initializable {
 
     }
 
+    @FXML
     public void milkProductFilter() {
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.DAIRIES))
@@ -165,6 +162,7 @@ public class ImatMainController implements Initializable {
         page_label.setText("Mejeri");
     }
 
+    @FXML
     public void kryddorFilter() {
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HERB))
@@ -172,6 +170,7 @@ public class ImatMainController implements Initializable {
         page_label.setText("Kryddor");
     }
 
+    @FXML
     public void dryckFilter() {
         flowPane.getChildren().clear();
         for (Product p : iMatDataHandler.getProducts(ProductCategory.HOT_DRINKS))
@@ -182,25 +181,55 @@ public class ImatMainController implements Initializable {
     }
 
 
-
-    public void setSearchFilter(){
+    @FXML
+    public void setSearchFilter() {
+        page_label.setText("söker...");
         flowPane.getChildren().clear();
-        for (Product p : iMatDataHandler.findProducts(searchFilter.getText()))
-            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));
+        for (Product p : iMatDataHandler.findProducts(searchFilter.getText())){
+            flowPane.getChildren().add(new ItemsCardsController(iMatDataHandler, this, p.getProductId()));}
+        if(flowPane.getChildren().isEmpty()){
+            page_label.setText("Hittade inga varor.. ");
+        }
 
     }
 
     @FXML
-    public void setHistorikCards(){
+    public void setHistorikCards() {
         flowPane.getChildren().clear();
         page_label.setText("Historik");
-        for(Order o : orderList) {
-                flowPane.getChildren().add(new historikCardsController(
-                        iMatDataHandler, this, o));
+        for (Order o : orderList) {
+            flowPane.getChildren().add(new historikCardsController(
+                    iMatDataHandler, this, o));
 
         }
     }
 
+    @FXML
+    public void setFavoritCards() {
+        flowPane.getChildren().clear();
+        page_label.setText("Favorit");
+        ItemsCardsController itemsCardsController;
+        for (Product p : iMatDataHandler.favorites()) {
+            itemsCardsController = new ItemsCardsController(iMatDataHandler, this, p.getProductId());
+            itemsCardsController.favorit.setImage(new Image("pic/star (1).png"));
+            flowPane.getChildren().add(itemsCardsController);
+
+        }
+    }
+@FXML
+    private void plusAntal(){
+        antalInt++;
+    antalLabel.setText(antalInt+"");
+    }
+
+    @FXML
+    private void minusAntal(){
+        if(antalInt>0) {
+            antalInt--;
+            antalLabel.setText(antalInt + "");
+        }
+    }
+
+
 
 }
-

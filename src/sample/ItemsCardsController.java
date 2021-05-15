@@ -21,39 +21,35 @@ import java.io.IOException;
 public class ItemsCardsController extends AnchorPane {
 
 
-
     @FXML
     Label productName;
     @FXML
     Label productPrice;
     @FXML
-    Label antal;
-    @FXML
-    Button merInfo;
-    @FXML
-    ImageView plus;
-    @FXML
-    ImageView minus;
-    @FXML
     ImageView productImage;
+    @FXML
+    Label favoritLabel;
 
-    int antalInt=0;
+    @FXML
+    public ImageView favorit;
+
 
 
     private ImatMainController parentController;
     private IMatDataHandler iMatDataHandler;
     private int id;
-
+    Image imageFilled = new Image("pic/star (1).png");
+    Image image= new Image("pic/star.png");
 
 
     public ItemsCardsController(IMatDataHandler iMatDataHandler,
                                 ImatMainController imatMainController, int id) {
 
-       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("item_card.fxml"));
-       fxmlLoader.setRoot(this);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("item_card.fxml"));
+        fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         this.iMatDataHandler = iMatDataHandler;
-        this.id=id;
+        this.id = id;
 
 
         try {
@@ -62,26 +58,61 @@ public class ItemsCardsController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        if (iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))){
+            favorit.setImage(imageFilled);
+            favoritLabel.setText("Favorit");
+        }
+        else if (!iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))){
+            favorit.setImage(image);
+            favoritLabel.setText("Ej favorit");
+        }
 
-       parentController=imatMainController;
-       productName.setText(iMatDataHandler.getProduct(id).getName());
-       productPrice.setText(iMatDataHandler.getProduct(id).getPrice() + "");
-       antal.setText(antalInt+"");
+        parentController = imatMainController;
+        productName.setText(iMatDataHandler.getProduct(id).getName());
+        productPrice.setText(iMatDataHandler.getProduct(id).getPrice() + "");
 
-       productImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
+        productImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
 
     }
 
-    private Image getImage(String path){
-         Image image = new Image(path);
-         return image;
+    private Image getImage(String path) {
+        Image image = new Image(path);
+        return image;
 
     }
+
+
     @FXML
-    private void infoHandler(Event event){
+    private void infoHandler(Event event) {
         parentController.getInfoScen();
         parentController.cardImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
+        parentController.detInfoPris.setText(productPrice.getText()+iMatDataHandler.getProduct(id).getUnit());
 
     }
 
+    @FXML
+    public void setFavoritItem() {
+
+        System.out.println("#");
+
+        if (iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))){
+            favorit.setImage(image);
+            iMatDataHandler.removeFavorite(iMatDataHandler.getProduct(id));
+            favoritLabel.setText("Ej favorit");
+
+            System.out.println("1");
+
+            parentController.flowPane.getChildren().remove(iMatDataHandler.getProduct(id));
+        }
+        else if (!iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id))){
+            favorit.setImage(imageFilled);
+            iMatDataHandler.addFavorite(iMatDataHandler.getProduct(id));
+            favoritLabel.setText("Favorit");
+
+            System.out.println("2");
+
+        }
+        System.out.println(iMatDataHandler.isFavorite(iMatDataHandler.getProduct(id)))   ;
+
+    }
 }
