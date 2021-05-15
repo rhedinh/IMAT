@@ -37,7 +37,7 @@
          <effect>
             <InnerShadow height="119.84" radius="59.42" width="119.84">
                <color>
-                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
+                  <Color red="0.21176470816135406" green="0.20000000298023224" blue="0.5686274766921997" />
                </color>
             </InnerShadow>
          </effect>
@@ -62,7 +62,7 @@
          <effect>
             <InnerShadow height="119.84" radius="59.42" width="119.84">
                <color>
-                  <Color red="0.21123474836349487" green="0.19885748624801636" blue="0.5701754093170166" />
+                  <Color red="0.7176470756530762" green="0.054901961237192154" blue="0.20000000298023224" />
                </color>
             </InnerShadow>
          </effect>

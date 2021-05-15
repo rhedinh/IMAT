@@ -174,9 +174,9 @@
                            <children>
                               <Button fx:id="mejeri" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#milkProductFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Mejeri">
                                  <effect>
-                                    <InnerShadow height="255.0" radius="103.095" width="159.38">
+                                    <InnerShadow height="183.29" radius="85.16749999999999" width="159.38">
                                        <color>
-                                          <Color red="0.9824561476707458" />
+                                          <Color red="0.07058823853731155" blue="0.9803921580314636" />
                                        </color>
                                     </InnerShadow>
                                  </effect>
@@ -189,9 +189,9 @@
                               </Button>
                               <Button fx:id="chark" layoutX="37.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#meatFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Chark">
                                  <effect>
-                                    <InnerShadow height="255.0" radius="103.095" width="159.38">
+                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
                                        <color>
-                                          <Color red="0.9824561476707458" />
+                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
                                        </color>
                                     </InnerShadow>
                                  </effect>
@@ -204,9 +204,9 @@
                               </Button>
                               <Button fx:id="grönsaker" layoutX="37.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#vegeFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Grönsaker    &amp; Frukt" wrapText="true">
                                  <effect>
-                                    <InnerShadow height="255.0" radius="103.095" width="159.38">
+                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
                                        <color>
-                                          <Color red="0.9824561476707458" />
+                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
                                        </color>
                                     </InnerShadow>
                                  </effect>
@@ -219,9 +219,9 @@
                               </Button>
                               <Button fx:id="bröd" layoutX="37.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#breadFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Bröd">
                                  <effect>
-                                    <InnerShadow height="255.0" radius="103.095" width="159.38">
+                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
                                        <color>
-                                          <Color red="0.9824561476707458" />
+                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
                                        </color>
                                     </InnerShadow>
                                  </effect>
@@ -234,9 +234,9 @@
                               </Button>
                               <Button fx:id="kryddor" layoutX="37.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#kryddorFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Kryddor">
                                  <effect>
-                                    <InnerShadow height="255.0" radius="103.095" width="159.38">
+                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
                                        <color>
-                                          <Color red="0.9824561476707458" />
+                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
                                        </color>
                                     </InnerShadow>
                                  </effect>
@@ -249,9 +249,9 @@
                               </Button>
                               <Button fx:id="godis" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#sweetFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="godis">
                                  <effect>
-                                    <InnerShadow height="255.0" radius="103.095" width="159.38">
+                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
                                        <color>
-                                          <Color red="0.9824561476707458" />
+                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
                                        </color>
                                     </InnerShadow>
                                  </effect>
@@ -264,9 +264,9 @@
                               </Button>
                               <Button layoutX="37.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#dryckFilter" prefHeight="73.0" prefWidth="89.0" stylesheets="@button.css" text="Dryck">
                                  <effect>
-                                    <InnerShadow height="255.0" radius="103.095" width="159.38">
+                                    <InnerShadow height="207.19" radius="91.1425" width="159.38">
                                        <color>
-                                          <Color red="0.9824561476707458" />
+                                          <Color red="0.0705035999417305" blue="0.9800000190734863" />
                                        </color>
                                     </InnerShadow>
                                  </effect>
@@ -338,9 +338,9 @@
                         </ImageView>
                         <Button layoutX="152.0" layoutY="34.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="89.0" stylesheets="@button.css" text="Home">
                            <effect>
-                              <InnerShadow height="72.15" radius="58.06" width="162.09">
+                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
                                  <color>
-                                    <Color red="0.9824561476707458" />
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
                                  </color>
                               </InnerShadow>
                            </effect>
@@ -353,9 +353,9 @@
                         </Button>
                       <Button layoutX="1032.0" layoutY="29.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="143.0" styleClass="background" stylesheets="@button.css" text="Konto">
                            <effect>
-                              <InnerShadow height="72.15" radius="58.06" width="162.09">
+                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
                                  <color>
-                                    <Color red="0.9824561476707458" />
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
                                  </color>
                               </InnerShadow>
                            </effect>
@@ -368,9 +368,9 @@
                         </Button>
                         <Button layoutX="840.0" layoutY="29.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="181.0" stylesheets="@button.css" text="Varukorgen">
                            <effect>
-                              <InnerShadow height="72.15" radius="58.06" width="162.09">
+                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
                                  <color>
-                                    <Color red="0.9824561476707458" />
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
                                  </color>
                               </InnerShadow>
                            </effect>
@@ -385,7 +385,7 @@
                            <effect>
                               <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
                                  <color>
-                                    <Color red="0.9843137264251709" />
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
                                  </color>
                               </InnerShadow>
                            </effect>
@@ -401,9 +401,9 @@
                         </Button>
                         <Button layoutX="653.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#setFavoritCards" prefHeight="42.0" prefWidth="173.0" stylesheets="@button.css" text="Favorit">
                            <effect>
-                              <InnerShadow height="72.15" radius="58.06" width="162.09">
+                              <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
                                  <color>
-                                    <Color red="0.9824561476707458" />
+                                    <Color red="0.07058823853731155" blue="0.9803921580314636" />
                                  </color>
                               </InnerShadow>
                            </effect>
