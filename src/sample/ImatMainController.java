@@ -70,6 +70,11 @@ public class ImatMainController implements Initializable {
     @FXML
     AnchorPane mainScen;
 
+    @FXML AnchorPane payscen;
+    @FXML FlowPane flowpay;
+    @FXML Button pay;
+    @FXML Label pricetot;
+
 
     @FXML
     ImageView exit;
@@ -98,6 +103,19 @@ public class ImatMainController implements Initializable {
     public void getMainScen(Event event) {
         mainScen.toFront();
 
+    }
+
+    public void getPayScen(Event event) {
+        payscen.toFront();
+
+        flowpay.getChildren().clear();
+        for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
+            flowpay.getChildren().add(new ShoppingCartItem(
+                    iMatDataHandler, this, s.getProduct().getProductId()));
+
+        }
+
+        pricetot.setText(iMatDataHandler.getShoppingCart().getTotal() + " kr");
     }
 
 
@@ -226,6 +244,11 @@ public class ImatMainController implements Initializable {
             flowPane.getChildren().add(itemsCardsController);
 
         }
+    }
+
+    @FXML public void placeNow(){
+        iMatDataHandler.placeOrder();
+        mainScen.toFront();
     }
 
 

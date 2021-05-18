@@ -54,6 +54,6 @@ public class ShoppingCartItem extends AnchorPane {
     }
 
     public void removeFromCart(){
-        iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.getProduct(id), -1);
+        //TODO
     }
 }
