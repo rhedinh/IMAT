@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="495.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="name" layoutX="171.0" layoutY="41.0" text="Namn" />
+      <ImageView fx:id="image" fitHeight="91.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <image>
+            <Image url="@../../../../../../Users/hampu/.dat215/imat/images/product_1.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="234.0" layoutY="32.0" text="Tillverkare" />
+      <Label fx:id="price" layoutX="247.0" layoutY="50.0" text="Pris" />
+      <Label fx:id="amount" layoutX="327.0" layoutY="41.0" text="Antal" />
+      <ImageView fitWidth="90.0" layoutX="420.0" layoutY="16.0" onMouseClicked="#removeFromCart" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <image>
+            <Image url="@../pic/Close-512.png" />
+         </image>
+      </ImageView>
+   </children>
+</fx:root>

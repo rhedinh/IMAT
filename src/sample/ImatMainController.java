@@ -205,6 +205,17 @@ public class ImatMainController implements Initializable {
     }
 
     @FXML
+    public void setCartCards() {
+        flowPane.getChildren().clear();
+        page_label.setText("Varukorg");
+        for (ShoppingItem s : iMatDataHandler.getShoppingCart().getItems()) {
+            flowPane.getChildren().add(new ShoppingCartItem(
+                    iMatDataHandler, this, s.getProduct().getProductId()));
+
+        }
+    }
+
+    @FXML
     public void setFavoritCards() {
         flowPane.getChildren().clear();
         page_label.setText("Favorit");
@@ -216,7 +227,9 @@ public class ImatMainController implements Initializable {
 
         }
     }
-@FXML
+
+
+    @FXML
     private void plusAntal(){
         antalInt++;
     antalLabel.setText(antalInt+"");

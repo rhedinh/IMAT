@@ -21,10 +21,55 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
+<AnchorPane prefHeight="735.0" prefWidth="1188.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ImatMainController">
    <children>
       <StackPane prefHeight="745.0" prefWidth="1188.0">
          <children>
+            <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <AnchorPane layoutX="317.0" layoutY="123.0" prefHeight="349.0" prefWidth="628.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <ImageView fx:id="cardImage" fitHeight="200.0" fitWidth="197.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="detInfoPris" layoutX="14.0" layoutY="254.0" prefHeight="43.0" prefWidth="143.0" text="Label" />
+                        <Button layoutX="464.0" layoutY="289.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Button">
+                           <effect>
+                              <InnerShadow height="111.94" radius="65.8475" width="153.45">
+                                 <color>
+                                    <Color red="0.21176470816135406" green="0.20000000298023224" blue="0.5686274766921997" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
+                        <Label fx:id="antalLabel" layoutX="303.0" layoutY="262.0" prefHeight="27.0" prefWidth="51.0" text="Label" />
+                        <ImageView fx:id="plus" fitHeight="27.0" fitWidth="27.0" layoutX="269.0" layoutY="257.0" onMouseClicked="#plusAntal" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/plus.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="minus" fitHeight="27.0" fitWidth="27.0" layoutX="346.0" layoutY="257.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/minus.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="563.0" layoutY="14.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pic/Close-512.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="antal" layoutX="228.0" layoutY="18.0" prefHeight="200.0" prefWidth="324.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrapText="true" />
+                     </children>
+                     <effect>
+                        <InnerShadow height="119.84" radius="62.3825" width="131.69">
+                           <color>
+                              <Color red="0.9843137264251709" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
             <AnchorPane prefHeight="662.0" prefWidth="1131.0">
                <children>
                   <AnchorPane layoutY="103.0" prefHeight="647.0" prefWidth="1190.0" style="-fx-background-color: #000000;">
@@ -118,51 +163,6 @@
                            </content>
                         </ScrollPane>
                      </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="infoScen" prefHeight="710.0" prefWidth="1162.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-               <children>
-                  <AnchorPane layoutX="317.0" layoutY="123.0" prefHeight="349.0" prefWidth="628.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <ImageView fx:id="cardImage" fitHeight="200.0" fitWidth="197.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label fx:id="detInfoPris" layoutX="14.0" layoutY="254.0" prefHeight="43.0" prefWidth="143.0" text="Label" />
-                        <Button layoutX="464.0" layoutY="289.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Button">
-                           <effect>
-                              <InnerShadow height="111.94" radius="65.8475" width="153.45">
-                                 <color>
-                                    <Color red="0.21176470816135406" green="0.20000000298023224" blue="0.5686274766921997" />
-                                 </color>
-                              </InnerShadow>
-                           </effect>
-                           <font>
-                              <Font size="15.0" />
-                           </font></Button>
-                        <Label fx:id="antalLabel" layoutX="303.0" layoutY="262.0" prefHeight="27.0" prefWidth="51.0" text="Label" />
-                        <ImageView fx:id="plus" fitHeight="27.0" fitWidth="27.0" layoutX="269.0" layoutY="257.0" onMouseClicked="#plusAntal" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/plus.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="minus" fitHeight="27.0" fitWidth="27.0" layoutX="346.0" layoutY="257.0" onMouseClicked="#minusAntal" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/minus.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="exit" fitHeight="41.0" fitWidth="51.0" layoutX="563.0" layoutY="14.0" onMouseClicked="#getMainScen" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../pic/Close-512.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="antal" layoutX="228.0" layoutY="18.0" prefHeight="200.0" prefWidth="324.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." wrapText="true" />
-                     </children>
-                     <effect>
-                        <InnerShadow height="119.84" radius="62.3825" width="131.69">
-                           <color>
-                              <Color red="0.9843137264251709" />
-                           </color>
-                        </InnerShadow>
-                     </effect>
                   </AnchorPane>
                </children>
             </AnchorPane>
@@ -366,7 +366,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="840.0" layoutY="29.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="181.0" stylesheets="@button.css" text="Varukorgen">
+                        <Button layoutX="840.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#setCartCards" prefHeight="41.0" prefWidth="181.0" stylesheets="@button.css" text="Varukorgen">
                            <effect>
                               <InnerShadow height="117.12" radius="69.30250000000001" width="162.09">
                                  <color>

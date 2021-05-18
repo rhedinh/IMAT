@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.ShoppingCart;
 
 
 import java.io.IOException;
@@ -103,6 +104,13 @@ public class ItemsCardsController extends AnchorPane {
         parentController.cardImage.setImage(iMatDataHandler.getFXImage(iMatDataHandler.getProduct(id)));
         parentController.detInfoPris.setText(productPrice.getText()+iMatDataHandler.getProduct(id).getUnit());
 
+    }
+
+    @FXML
+    public void addToCart(){
+        System.out.println("added!");
+        iMatDataHandler.getShoppingCart().addProduct(iMatDataHandler.getProduct(id));
+        //System.out.println(iMatDataHandler.getShoppingCart().getTotal());
     }
 
     @FXML
